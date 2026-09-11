@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0",
+  "id": "member.current-savings-balance",
+  "version": 1,
+  "description": "Look up a member and return their current savings balance.",
+  "inputs": {
+    "memberId": {
+      "type": "string",
+      "pattern": "^\\d{5}$",
+      "sensitive": true
+    }
+  },
+  "outputs": {
+    "outcome": {
+      "type": "enum",
+      "values": [
+        "FOUND",
+        "NOT_FOUND"
+      ]
+    },
+    "memberName": {
+      "type": "string"
+    },
+    "currentSavingsBalance": {
+      "type": "currency"
+    }
+  },
+  "policy": {
+    "allowedOrigins": [
+      "http://127.0.0.1:54126"
+    ],
+    "allowedActions": [
+      "fill",
+      "click",
+      "read"
+    ],
+    "riskyActions": "block"
+  },
+  "steps": [
+    {
+      "id": "enter-member",
+      "type": "fill",
+      "target": {
+        "candidates": [
+          {
+            "role": "textbox",
+            "name": "Member ID"
+          },
+          {
+            "css": "input[name=\"member_id\"]"
+          }
+        ]
+      },
+      "valueFrom": "memberId"
+    },
+    {
+      "id": "search",
+      "type": "click",
+      "target": {
+        "candidates": [
+          {
+            "role": "button",
+            "name": "Search member"
+          },
+          {
+            "css": "button"
+          }
+        ]
+      }
+    },
+    {
+      "id": "classify",
+      "type": "read",
+      "checkpoint": {
+        "any": [
+          {
+            "css": "#member-record"
+          },
+          {
+            "role": "alert",
+            "text": "Member record not found"
+          }
+        ]
+      }
+    }
+  ],
+  "locatorStrategy": "Accessibility role/name first; semantic attribute/CSS fallback. Each action is followed by a state assertion.",
+  "successCheckpoint": {
+    "css": "#member-record"
+  }
+}

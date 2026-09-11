@@ -1,0 +1,27 @@
+[
+  {
+    "at": "2026-09-11T05:52:37.234Z",
+    "event": "DISCOVERY_STARTED",
+    "planner": "scripted-demo",
+    "note": "Replace with a live LLM provider before submission."
+  },
+  {
+    "at": "2026-09-11T05:52:37.234Z",
+    "event": "OBSERVED",
+    "state": "member lookup form"
+  },
+  {
+    "at": "2026-09-11T05:52:37.234Z",
+    "event": "DECIDED",
+    "actions": [
+      "fill member ID",
+      "click search",
+      "read result"
+    ]
+  },
+  {
+    "at": "2026-09-11T05:52:37.234Z",
+    "event": "DISCOVERY_COMPLETED",
+    "artifactId": "member.current-savings-balance"
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "found": {
+    "status": "SUCCESS",
+    "outputs": {
+      "outcome": "FOUND",
+      "memberName": "Ada Lovelace",
+      "currentSavingsBalance": "$1,250.00"
+    }
+  },
+  "notFound": {
+    "status": "BUSINESS_OUTCOME",
+    "outcome": "NOT_FOUND"
+  },
+  "intervention": {
+    "sessionId": "demo-session-1",
+    "owner": "operator",
+    "request": {
+      "capabilityId": "member.current-savings-balance",
+      "step": "operator-demo",
+      "reason": "Simulated confirmation dialog",
+      "liveUrl": "http://127.0.0.1:54126/?member=12345"
+    }
+  },
+  "handoffEvents": [
+    {
+      "type": "INTERVENTION_REQUESTED",
+      "at": "2026-09-11T05:52:38.320Z",
+      "capabilityId": "member.current-savings-balance",
+      "step": "operator-demo",
+      "reason": "Simulated confirmation dialog",
+      "liveUrl": "http://127.0.0.1:54126/?member=12345"
+    },
+    {
+      "type": "CONTROL_RETURNED",
+      "operator": "demo.operator",
+      "note": "Reviewed the confirmation dialog; safe to continue.",
+      "at": "2026-09-11T05:52:38.320Z"
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-11T05:52:38.194Z",
+      "event": "STEP_STARTED",
+      "step": "enter-member"
+    },
+    {
+      "at": "2026-09-11T05:52:38.233Z",
+      "event": "STEP_COMPLETED",
+      "step": "enter-member"
+    },
+    {
+      "at": "2026-09-11T05:52:38.233Z",
+      "event": "STEP_STARTED",
+      "step": "search"
+    },
+    {
+      "at": "2026-09-11T05:52:38.296Z",
+      "event": "STEP_COMPLETED",
+      "step": "search"
+    },
+    {
+      "at": "2026-09-11T05:52:38.296Z",
+      "event": "STEP_STARTED",
+      "step": "classify"
+    },
+    {
+      "at": "2026-09-11T05:52:38.316Z",
+      "event": "STEP_COMPLETED",
+      "step": "classify"
+    },
+    {
+      "at": "2026-09-11T05:52:38.320Z",
+      "event": "REPLAY_SUCCEEDED",
+      "outputs": {
+        "outcome": "FOUND",
+        "memberName": "Ada Lovelace",
+        "currentSavingsBalance": "$1,250.00"
+      }
+    },
+    {
+      "at": "2026-09-11T05:52:38.336Z",
+      "event": "STEP_STARTED",
+      "step": "enter-member"
+    },
+    {
+      "at": "2026-09-11T05:52:38.363Z",
+      "event": "STEP_COMPLETED",
+      "step": "enter-member"
+    },
+    {
+      "at": "2026-09-11T05:52:38.363Z",
+      "event": "STEP_STARTED",
+      "step": "search"
+    },
+    {
+      "at": "2026-09-11T05:52:38.551Z",
+      "event": "STEP_COMPLETED",
+      "step": "search"
+    },
+    {
+      "at": "2026-09-11T05:52:38.551Z",
+      "event": "STEP_STARTED",
+      "step": "classify"
+    },
+    {
+      "at": "2026-09-11T05:52:38.567Z",
+      "event": "BUSINESS_OUTCOME",
+      "outcome": "NOT_FOUND",
+      "step": "classify"
+    }
+  ]
+}

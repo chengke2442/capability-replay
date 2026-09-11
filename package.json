@@ -1,0 +1,10 @@
+{
+  "name": "legacy-ui-capability-mvp",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "demo": "set NODE_PATH=C:\\Users\\mxz\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules&& node src/demo.js",
+    "test": "set NODE_PATH=C:\\Users\\mxz\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules&& node --test"
+  }
+}
